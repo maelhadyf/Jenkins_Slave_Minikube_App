@@ -11,6 +11,8 @@ pipeline {
         stage('Determine Environment') {
             steps {
                 echo "Deploying to namespace: ${NAMESPACE}"
+                // Ensure the namespace exists
+                sh "kubectl get namespace ${NAMESPACE} || kubectl create namespace ${NAMESPACE}"
             }
         }
         
@@ -20,9 +22,23 @@ pipeline {
                     // Create ConfigMap from the appropriate HTML file
                     sh """
                         kubectl create configmap html-content \
-                        --from-file=page.html=${NAMESPACE}/page.html \
+                        --from-file=page.html=page.html \
                         -n ${NAMESPACE} \
                         --dry-run=client -o yaml | kubectl apply -f -
+                    """
+
+                    sh """
+                        kubectl create configmap nginx-config \
+                        -n ${NAMESPACE} \
+                        --from-literal=default.conf='server {
+                            listen 80;
+                            server_name localhost;
+                            location / {
+                                root /usr/share/nginx/html;
+                                index index.html;
+                                autoindex on;
+                            }
+                        }'
                     """
                 }
             }
@@ -31,8 +47,12 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    // Ensure the namespace exists
-                    sh "kubectl get namespace ${NAMESPACE} || kubectl create namespace ${NAMESPACE}"
+                    // Check if namespace exists first, then create if it doesn't
+                    sh """
+                        kubectl get namespace ${NAMESPACE} >/dev/null 2>&1 || \
+                        kubectl create namespace ${NAMESPACE} || \
+                        (echo "Failed to create namespace ${NAMESPACE}" && exit 1)
+                    """
                     
                     // Deploy to the appropriate namespace
                     sh """
@@ -44,15 +64,9 @@ pipeline {
     }
 
     post {
-        success {
-            echo "Pipeline executed successfully!"
-            cleanWs() // Clean workspace
-            sh 'git clean -fdx' // Clean untracked files and directories
-        }
-        failure {
-            echo "Pipeline failed!"
-            cleanWs() // Clean workspace on failure too
-            sh 'git clean -fdx' // Clean untracked files and directories
+        always {
+            
+            cleanWs()
         }
     }
 }
