@@ -10,3 +10,5 @@
 
 - create another ec2 as slave with all tools u need  
   - put this script `script_ec2_amazonlinux_slaveAgent_minikube_docker_OC.sh` in ec2 **User data**
+
+.
