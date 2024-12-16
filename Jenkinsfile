@@ -26,6 +26,20 @@ pipeline {
                         -n ${NAMESPACE} \
                         --dry-run=client -o yaml | kubectl apply -f -
                     """
+
+                    sh """
+                        kubectl create configmap nginx-config \
+                        -n ${NAMESPACE} \
+                        --from-literal=default.conf='server {
+                            listen 80;
+                            server_name localhost;
+                            location / {
+                                root /usr/share/nginx/html;
+                                index index.html;
+                                autoindex on;
+                            }
+                        }'
+                    """
                 }
             }
         }
