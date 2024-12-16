@@ -44,4 +44,5 @@ spec:
   ports:
   - port: 8080
     targetPort: 80
-  type: ClusterIP
+    nodePort: 8080  # access your application: 8080
+  type: NodePort
