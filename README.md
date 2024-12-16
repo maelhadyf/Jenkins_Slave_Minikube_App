@@ -7,7 +7,7 @@ Create Jenkins slave to run this pipeline
 Use github webhooks to trigger the pipeline  
 ![image](https://github.com/user-attachments/assets/88772068-f4a6-4b7b-97fa-c551c33acedb)
 
-
+---
 
 ## Steps
 
@@ -31,6 +31,8 @@ yum install java-21-amazon-corretto -y
 mkdir -p /opt/jenkins-agent
 chown -R ec2-user:ec2-user /opt/jenkins-agent
 ```
+---
+
 ### 2- connect the ec2-slave to jenkins master
 #### 1- Add Credentials
   - Choose "SSH Username with private key"
@@ -48,6 +50,8 @@ chown -R ec2-user:ec2-user /opt/jenkins-agent
   - ![image](https://github.com/user-attachments/assets/23f841db-5732-4268-950a-360eb77b4f5f)
     
   - ![image](https://github.com/user-attachments/assets/e4960f75-b226-4540-94bb-12849a5f70ff)
+
+---
 
 ### 3- Github Webhooks
 #### 1- Install required plugins:
@@ -67,6 +71,8 @@ chown -R ec2-user:ec2-user /opt/jenkins-agent
    
  - ![image](https://github.com/user-attachments/assets/703e90f6-18c1-47ab-8590-3fafa778aec9)
 
+---
+
 ### 4- Configure Multi-branch Pipeline
 - ![image](https://github.com/user-attachments/assets/94caf11e-646e-494d-bf78-a41d6b2112f2)
 
@@ -78,6 +84,7 @@ chown -R ec2-user:ec2-user /opt/jenkins-agent
 
 - ![image](https://github.com/user-attachments/assets/6b564435-abf2-41b9-a4b0-325e3f3521f4)
 
+---
 
 ### Verification
 - ![image](https://github.com/user-attachments/assets/ed068255-f603-47e9-ba8b-6de8820941c4)
