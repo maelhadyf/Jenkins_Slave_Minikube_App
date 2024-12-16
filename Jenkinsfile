@@ -31,8 +31,12 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    // Ensure the namespace exists
-                    sh "kubectl get namespace ${NAMESPACE} || kubectl create namespace ${NAMESPACE}"
+                    // Check if namespace exists first, then create if it doesn't
+                    sh """
+                        if ! kubectl get namespace ${NAMESPACE} >/dev/null 2>&1; then
+                            kubectl create namespace ${NAMESPACE}
+                        fi
+                    """
                     
                     // Deploy to the appropriate namespace
                     sh """
