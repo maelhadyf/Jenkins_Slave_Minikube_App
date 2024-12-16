@@ -5,7 +5,8 @@ Create 3 namespaces in you K8S environment.
 Create a Multibranch pipeline to automate the deployment in the namespace based on GitHub branch.  
 Create Jenkins slave to run this pipeline  
 Use github webhooks to trigger the pipeline  
-![image](https://github.com/user-attachments/assets/0e7ca19f-9d74-4706-b3d7-019ece56b9b4)
+![image](https://github.com/user-attachments/assets/88772068-f4a6-4b7b-97fa-c551c33acedb)
+
 
 
 ## Steps
