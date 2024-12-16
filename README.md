@@ -1,5 +1,12 @@
 # Jenkins_Slave_Minikube_App
 
+Lab 26: MultiBranch Pipeline Project  
+Create 3 namespaces in you K8S environment.  
+Create a Multibranch pipeline to automate the deployment in the namespace based on GitHub branch.  
+Create Jenkins slave to run this pipeline  
+Use github webhooks to trigger the pipeline  
+![image](https://github.com/user-attachments/assets/2b18270f-6af8-46e1-8f81-a856ed9b8339)
+
 ## Steps
 
 ### 1- Configure 2 ec2 Amazon Linux 2023
