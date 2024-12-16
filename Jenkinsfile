@@ -11,6 +11,8 @@ pipeline {
         stage('Determine Environment') {
             steps {
                 echo "Deploying to namespace: ${NAMESPACE}"
+                // Ensure the namespace exists
+                sh "kubectl get namespace ${NAMESPACE} || kubectl create namespace ${NAMESPACE}"
             }
         }
         
