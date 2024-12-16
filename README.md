@@ -12,7 +12,7 @@
   - put this script `script_ec2_amazonlinux_slaveAgent_minikube_docker_OC.sh` in ec2 **User data**
   - **Instance type:** t2.mediuem
   - **Storage:** 20 GiB
-> **Important Note**
+> **Important Note**  
 > run this code on ec2-slave if not use `script_ec2_amazonlinux_slaveAgent_minikube_docker_OC.sh`
 ```bash
 # Install Java (required to connect to jenkins master)
