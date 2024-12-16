@@ -4,7 +4,7 @@
 
 ### 1- Configure 2 ec2 Amazon Linux 2023
 - create ec2 as jenkins master  
-  - put this script `jenkins_container.sh` in ec2 **User data**
+  - put this script `jenkins_as_service.sh` in ec2 **User data**
 > **Important Note:**  
 > open ports 8080, 50000
 
