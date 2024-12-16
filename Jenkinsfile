@@ -50,15 +50,9 @@ pipeline {
     }
 
     post {
-        success {
-            echo "Pipeline executed successfully!"
-            cleanWs() // Clean workspace
-            sh 'git clean -fdx' // Clean untracked files and directories
-        }
-        failure {
-            echo "Pipeline failed!"
-            cleanWs() // Clean workspace on failure too
-            sh 'git clean -fdx' // Clean untracked files and directories
+        always {
+            
+            cleanWs()
         }
     }
 }
