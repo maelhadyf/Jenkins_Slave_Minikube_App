@@ -13,7 +13,7 @@
   - **Instance type:** t2.mediuem
   - **Storage:** 20 GiB
 > **Important Note**  
-> run this code on ec2-slave if not use `script_ec2_amazonlinux_slaveAgent_minikube_docker_OC.sh`
+> run this code on **ec2-slave** if not use `script_ec2_amazonlinux_slaveAgent_minikube_docker_OC.sh`
 ```bash
 # Install Java (required to connect to jenkins master)
 yum install java-21-amazon-corretto -y
@@ -40,6 +40,15 @@ chown -R ec2-user:ec2-user /opt/jenkins-agent
 - GitHub Branch Source Plugin
 - GitHub Integration Plugin
 - Multibranch Scan Webhook Trigger Plugin
+
+#### 2- Go to your repository settings
+ - Click "Webhooks"
+ - ![image](https://github.com/user-attachments/assets/a259bb7d-cda7-40bf-938e-a1a408c0eb83)
+ - ![image](https://github.com/user-attachments/assets/bb66fe69-2303-456e-a27f-096584e22e06)
+ - ![image](https://github.com/user-attachments/assets/fc9d72ca-ec19-4e1d-b695-a30493cb39c9)
+ - ![image](https://github.com/user-attachments/assets/c50eaa1c-cc8c-423e-9d5b-dc49caffc9cc)
+
+
 
 
 
