@@ -14,6 +14,21 @@
   - **Storage:** 20 GiB
 
 ### 2- connect the ec2-slave to jenkins master
--Add Credentials
+1- Add Credentials
   - Choose "SSH Username with private key"
-  - ![image](https://github.com/user-attachments/assets/d7902d05-efab-4799-8fe5-3b361658c573)
+    - ![image](https://github.com/user-attachments/assets/d7902d05-efab-4799-8fe5-3b361658c573)
+
+2- Add the new node in Jenkins
+  - ![image](https://github.com/user-attachments/assets/d71a6ad3-6868-4629-bb27-d609e4cf2565)
+  - ![image](https://github.com/user-attachments/assets/6f8b8f0c-a546-411a-8988-807fefef4a88)
+  - ![image](https://github.com/user-attachments/assets/7eda5f67-3353-449d-b667-9e08c2cf4f1d)
+  - ![image](https://github.com/user-attachments/assets/823ab945-f9e4-405b-8a40-664aec12cfde)
+  - ![image](https://github.com/user-attachments/assets/23f841db-5732-4268-950a-360eb77b4f5f)
+  - ![image](https://github.com/user-attachments/assets/e4960f75-b226-4540-94bb-12849a5f70ff)
+
+
+
+
+
+
+
