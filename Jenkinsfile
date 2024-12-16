@@ -33,9 +33,9 @@ pipeline {
                 script {
                     // Check if namespace exists first, then create if it doesn't
                     sh """
-                        if ! kubectl get namespace ${NAMESPACE} >/dev/null 2>&1; then
-                            kubectl create namespace ${NAMESPACE}
-                        fi
+                        kubectl get namespace ${NAMESPACE} >/dev/null 2>&1 || \
+                        kubectl create namespace ${NAMESPACE} || \
+                        (echo "Failed to create namespace ${NAMESPACE}" && exit 1)
                     """
                     
                     // Deploy to the appropriate namespace
