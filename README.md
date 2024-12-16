@@ -47,6 +47,12 @@ chown -R ec2-user:ec2-user /opt/jenkins-agent
  - ![image](https://github.com/user-attachments/assets/bb66fe69-2303-456e-a27f-096584e22e06)
  - ![image](https://github.com/user-attachments/assets/fc9d72ca-ec19-4e1d-b695-a30493cb39c9)
  - ![image](https://github.com/user-attachments/assets/c50eaa1c-cc8c-423e-9d5b-dc49caffc9cc)
+ - 
+
+
+
+### Verification
+
 
 
 
