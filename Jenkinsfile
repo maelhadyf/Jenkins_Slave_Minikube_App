@@ -20,7 +20,7 @@ pipeline {
                     // Create ConfigMap from the appropriate HTML file
                     sh """
                         kubectl create configmap html-content \
-                        --from-file=page.html=${NAMESPACE}/page.html \
+                        --from-file=page.html=page.html \
                         -n ${NAMESPACE} \
                         --dry-run=client -o yaml | kubectl apply -f -
                     """
