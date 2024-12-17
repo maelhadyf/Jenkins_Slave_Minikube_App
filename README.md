@@ -15,12 +15,21 @@ Use github webhooks to trigger the pipeline
 - create ec2 as jenkins master  
   - put this script `jenkins_as_service.sh` in ec2 **User data**
 > **Important Note:**  
-> open ports 8080, 50000
+> open ports 8080, 50000 in security group
 
 - create another ec2 as slave with all tools u need  
   - put this script `script_ec2_amazonlinux_slaveAgent_minikube_docker_OC.sh` in ec2 **User data**
   - **Instance type:** t2.mediuem
   - **Storage:** 20 GiB
+  - run this code when machine running
+    ```bash
+    # minikube
+    minikube start
+    minikube status
+    minikube kubectl -- get pods
+    kubectl config use-context minikube
+    ```
+ 
 > **Important Note**  
 > run this code on **ec2-slave** if not use `script_ec2_amazonlinux_slaveAgent_minikube_docker_OC.sh`
 ```bash
