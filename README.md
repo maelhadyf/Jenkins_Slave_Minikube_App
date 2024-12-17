@@ -23,7 +23,7 @@ Use github webhooks to trigger the pipeline
   - **Storage:** 20 GiB
   - run this code when machine running
     ```bash
-    # minikube
+    # start Minikube & switches kubectl context to Minikube
     minikube start
     minikube status
     minikube kubectl -- get pods
